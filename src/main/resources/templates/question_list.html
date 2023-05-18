@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>제목</th>
+            <th>생성일자</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="question : ${questionList}">
+            <td>
+                <a th:href="@{|/question/detail/${question.id}|}" th:text="${question.title}">
+                </a>
+            </td>
+            <td th:text="${question.createDate}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/question/create}">질문 등록하기</a>
+</div>
+</html>
